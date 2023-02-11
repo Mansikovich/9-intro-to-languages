@@ -6,10 +6,9 @@ public class Program
 	{
 
 
-
 int m = InputInt("Введите M:");
 int n = InputInt("Введите N:");
-Console.WriteLine($"->{CountNaturalSum(m, n)}");
+Console.WriteLine($"A({m}, {n}) = {AckermannFunction(m, n)}");
 
 int InputInt(string output)
 {
@@ -17,11 +16,15 @@ int InputInt(string output)
     return int.Parse(Console.ReadLine());
 }
 
-int CountNaturalSum(int m, int n)
+
+int n(int m, int n)
 {
-    if (m == n)
-        return n;
-    return n + CountNaturalSum(m, n - 1);
+    if (m == 0)
+        return n + 1;
+    if (m > 0 && n == 0)
+        return k(m - 1, 1);
+    else
+        return k(m - 1, k(m, n - 1));
 }
 	}
 }
